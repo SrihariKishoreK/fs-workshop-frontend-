@@ -16,7 +16,7 @@ export default function Movie({ movieTake,getMovies}) {
   const navigate = useNavigate();
   const deleteMovie = (id) =>{
     // console.log(id);
-    fetch(`https://65f296f3034bdbecc76539e8.mockapi.io/api/workshop/movies/${id}`,{
+    fetch(`https://server-lac-three.vercel.app/delete/${id}`,{
       method:"DELETE",
     })
     .then(()=>getMovies())
@@ -43,7 +43,7 @@ export default function Movie({ movieTake,getMovies}) {
               <ExpandMoreIcon fontSize="large" />
             )}
           </IconButton>
-          <IconButton color="primary" aria-label="movie-info" onClick={() => navigate(`/portal/view/${movieTake.id}`)}>
+          <IconButton color="primary" aria-label="movie-info" onClick={() => navigate(`/portal/view/${movieTake._id}`)}>
             <InfoIcon fontSize="medium" />
           </IconButton>
         </h2>
@@ -52,11 +52,11 @@ export default function Movie({ movieTake,getMovies}) {
       {show ? <p className="movie-summary">{movieTake.summary}</p> : null}
       <CardActions>
         <Counter />
-        <IconButton sx={{marginLeft:"auto"}} aria-label="editMovie" onClick={()=>navigate(`/portal/edit/${movieTake.id}`)}>
+        <IconButton sx={{marginLeft:"auto"}} aria-label="editMovie" onClick={()=>navigate(`http://localhost:3000/portal/edit/${movieTake._id}`)}>
           <EditIcon color="secondary"></EditIcon>
         </IconButton>
         <IconButton sx={{marginLeft:"auto"}} aria-label="editMovie">
-          <DeleteIcon color="secondary" onClick={()=>deleteMovie(movieTake.id)}></DeleteIcon>
+          <DeleteIcon color="secondary" onClick={()=>deleteMovie(movieTake._id)}></DeleteIcon>
         </IconButton>
       </CardActions>
     </Card>

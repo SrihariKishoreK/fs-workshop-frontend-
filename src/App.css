@@ -28,6 +28,7 @@ a, Link {
     border-radius: 10px;
     box-shadow: 5px 10px 20px rgb(6, 41, 62);
     background-color: #cbebfd;
+    align-items: center;
 }
 
 .movie-poster{

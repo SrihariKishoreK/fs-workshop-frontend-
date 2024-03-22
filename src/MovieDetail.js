@@ -6,7 +6,7 @@ export default function MovieDetail() {
   const [movie , setMovie] = useState([]);
 
     useEffect(()=>{
-      fetch(`https://65f296f3034bdbecc76539e8.mockapi.io/api/workshop/movies/${id}`,{
+      fetch(`https://server-lac-three.vercel.app/getone/${id}`,{
         method:"GET",
       })
       .then((data) => data.json())
@@ -17,7 +17,15 @@ export default function MovieDetail() {
     };
   return (
     <div>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Po3jStA673E?si=0szJI0unbETyfyzP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+     <iframe
+        width="560"
+        height="315"
+        src={movie.trailer}
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
       <div class="movie-details-container">
         <div class="movie-spec">
           <h2 class="movie-name">{movie.name}</h2>

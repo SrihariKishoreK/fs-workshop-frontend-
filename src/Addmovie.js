@@ -28,7 +28,7 @@ export default function Addmovie() {
 const navigate = useNavigate();
 
 const addmovie = (values) => {
-  fetch("https://65f296f3034bdbecc76539e8.mockapi.io/api/workshop/movies", {
+  fetch("https://server-lac-three.vercel.app/post", {
     method: "POST",
     body: JSON.stringify(values),
     headers: {

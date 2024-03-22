@@ -5,7 +5,7 @@ export default function Home() {
     <div className="home">
       <h1>Home</h1>
       <img
-        src="https://h2.gifposter.com/gifs/kids/happy-dance-gif-baby.gif"
+        src="https://i.pinimg.com/originals/32/a2/ce/32a2cedb577aaabcb2d58535fddf4cfb.gif"
         alt=""
       />
     </div>
